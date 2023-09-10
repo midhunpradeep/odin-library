@@ -119,15 +119,6 @@ html {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.container .library .book-container:hover {
-  transform: scale(1.02);
-}
-
-.container .library .book-container:active {
-  transform: none;
 }
 
 .container .library .book-container .book-name-delete-container {
@@ -154,7 +145,6 @@ html {
   justify-content: end;
   align-items: center;
   gap: 0.5rem;
-  pointer-events: none;
   font-weight: 300;
 }
 

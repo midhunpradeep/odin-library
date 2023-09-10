@@ -25,10 +25,6 @@ Library.prototype.addBook = function (book) {
     book.hasBeenRead = bookReadBox.checked;
     console.log(this);
   });
-
-  bookElement.addEventListener("click", () => {
-    bookReadBox.click();
-  });
 };
 
 function Book(name, author, numPages, hasBeenRead) {
