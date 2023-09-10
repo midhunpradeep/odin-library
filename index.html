@@ -22,9 +22,42 @@
   <body>
     <div class="container">
       <h1>Library</h1>
+
       <button class="new-book-btn" id="new-book-btn" type="button">
         New Book
       </button>
+      <dialog class="new-book-dialog" id="new-book-dialog">
+        <form method="dialog">
+          <h2>Add New Book</h2>
+
+          <label for="new-book-name">Name</label>
+          <input type="text" name="book_name" id="new-book-name" required />
+
+          <label for="new-book-author">Author</label>
+          <input type="text" name="book_author" id="new-book-author" required />
+
+          <label for="new-book-pages">Pages</label>
+          <input
+            type="number"
+            name="book_pages"
+            id="new-book-pages"
+            min="0"
+            required
+          />
+
+          <button class="new-book-add-btn" id="new-book-add-btn" type="submit">
+            Add
+          </button>
+          <button
+            class="new-book-cancel-btn"
+            id="new-book-cancel-btn"
+            type="button"
+          >
+            Cancel
+          </button>
+        </form>
+      </dialog>
+
       <div class="library" id="library"></div>
     </div>
   </body>

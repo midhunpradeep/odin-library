@@ -38,6 +38,69 @@ html {
   transform: none;
 }
 
+.container .new-book-dialog {
+  background-color: var(--color-2);
+  border-radius: 1rem;
+  border: 0;
+  border-left: 0.33rem solid var(--color-3);
+  border-bottom: 0.33rem solid var(--color-3);
+  padding: 1rem 2rem;
+  margin: auto;
+}
+
+.container .new-book-dialog::backdrop {
+  background-color: rgba(0 0 0 / 0.6);
+}
+
+.container .new-book-dialog form {
+  display: grid;
+  grid-template-columns: max-content 1fr 1fr;
+  gap: 1rem 1rem;
+  align-items: center;
+}
+
+.container .new-book-dialog form h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+}
+
+.container .new-book-dialog label {
+  text-align: right;
+}
+
+.container .new-book-dialog input {
+  grid-column: 2 / -1;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--color-1);
+  padding: 0.2rem 1rem;
+}
+
+.container .new-book-dialog input:focus {
+  outline: 0.1rem solid var(--color-3);
+}
+
+.container .new-book-dialog button {
+  margin-top: 1rem;
+  background-color: var(--color-3);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.33rem 1rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.container .new-book-dialog button:hover {
+  transform: scale(1.05);
+}
+
+.container .new-book-dialog button:active {
+  transform: scale(0.95);
+}
+
+.container .new-book-dialog .new-book-add-btn {
+  grid-column: 2 / span 1;
+}
+
 .container .library {
   grid-column: 1 / -1;
   display: grid;

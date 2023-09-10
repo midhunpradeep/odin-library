@@ -79,6 +79,36 @@ Book.prototype.generateBookHTMLElement = function () {
   return bookContainer;
 };
 
+function addShowDialogEvent() {
+  const newBookBtn = document.getElementById("new-book-btn");
+  const newBookDialog = document.getElementById("new-book-dialog");
+
+  newBookBtn.addEventListener("click", () => {
+    newBookDialog.showModal();
+  });
+}
+
+function addDialogFormEvents(library) {
+  const dialog = document.getElementById("new-book-dialog");
+
+  dialog.querySelector("#new-book-cancel-btn").addEventListener("click", () => {
+    for (const inputElement of dialog.querySelectorAll("input")) {
+      inputElement.value = "";
+    }
+    dialog.close();
+  });
+
+  dialog.querySelector("form").addEventListener("submit", () => {
+    let bookName = dialog.querySelector("#new-book-name").value;
+    let bookAuthor = dialog.querySelector("#new-book-author").value;
+    let bookPages = dialog.querySelector("#new-book-pages").value;
+    for (const inputElement of dialog.querySelectorAll("input")) {
+      inputElement.value = "";
+    }
+    library.addBook(new Book(bookName, bookAuthor, bookPages, false));
+  });
+}
+
 function main() {
   const myLibrary = new Library("library");
 
@@ -97,6 +127,9 @@ function main() {
   );
   myLibrary.addBook(new Book("The Call Of The Wild", "Jack London", 288, true));
   myLibrary.addBook(new Book("To Kill A Mockingbird", "Harper Lee", 309, true));
+
+  addShowDialogEvent();
+  addDialogFormEvents(myLibrary);
 }
 
 main();
