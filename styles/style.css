@@ -15,10 +15,11 @@ html {
   display: grid;
   grid-template: max-content 1fr / 1fr 1fr;
   gap: 1rem;
-  align-items: center;
+  align-items: start;
 }
 
 .container .new-book-btn {
+  align-self: center;
   justify-self: end;
   background-color: var(--color-3);
   color: var(--color-2);
