@@ -43,10 +43,20 @@ Book.prototype.generateBookHTMLElement = function () {
   const bookContainer = document.createElement("div");
   bookContainer.classList.add("book-container");
 
+  const topRow = document.createElement("div");
+  topRow.classList.add("book-name-delete-container");
+  bookContainer.appendChild(topRow);
+
   const bookName = document.createElement("h2");
-  bookContainer.appendChild(bookName);
+  topRow.appendChild(bookName);
   bookName.classList.add("book-name");
   bookName.textContent = this.name;
+
+  const deleteButton = document.createElement("button");
+  topRow.appendChild(deleteButton);
+  deleteButton.classList.add("book-delete-btn");
+  deleteButton.classList.add("material-symbols-outlined");
+  deleteButton.textContent = "delete";
 
   const bookAuthor = document.createElement("h3");
   bookContainer.appendChild(bookAuthor);
@@ -120,6 +130,8 @@ function addDialogCloseOnOutsideClickEvent() {
 
 function main() {
   const myLibrary = new Library("library");
+
+  myLibrary.addBook(new Book("Sample Book", "Sample Author", 210, false));
 
   addShowDialogEvent();
   addDialogFormEvents(myLibrary);

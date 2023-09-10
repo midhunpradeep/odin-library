@@ -130,6 +130,20 @@ html {
   transform: none;
 }
 
+.container .library .book-container .book-name-delete-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .library .book-container .book-delete-btn {
+  background-color: var(--color-3);
+  color: var(--color-1);
+  padding: 0.33rem;
+  border: 0;
+  border-radius: 0.67rem;
+}
+
 .container .library .book-container .book-pages {
   font-weight: 300;
 }
@@ -142,4 +156,12 @@ html {
   gap: 0.5rem;
   pointer-events: none;
   font-weight: 300;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 500,
+    "GRAD" 0,
+    "opsz" 24;
 }
