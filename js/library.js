@@ -109,11 +109,21 @@ function addDialogFormEvents(library) {
   });
 }
 
+function addDialogCloseOnOutsideClickEvent() {
+  const dialog = document.getElementById("new-book-dialog");
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) {
+      dialog.close();
+    }
+  });
+}
+
 function main() {
   const myLibrary = new Library("library");
 
   addShowDialogEvent();
   addDialogFormEvents(myLibrary);
+  addDialogCloseOnOutsideClickEvent();
 }
 
 main();
