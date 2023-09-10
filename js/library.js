@@ -155,9 +155,6 @@ function addDialogCloseOnOutsideClickEvent() {
 
 function main() {
   const myLibrary = new Library("library");
-
-  myLibrary.addBook(new Book("Sample Book", "Sample Author", 210, false));
-
   addShowDialogEvent();
   addDialogFormEvents(myLibrary);
   addDialogCloseOnOutsideClickEvent();
