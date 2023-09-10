@@ -112,22 +112,6 @@ function addDialogFormEvents(library) {
 function main() {
   const myLibrary = new Library("library");
 
-  myLibrary.addBook(new Book("The Alchemist", "Paulo Coelho", 167, true));
-  myLibrary.addBook(
-    new Book(
-      "The Hitchhiker’s Guide To The Galaxy",
-      "Douglas Adams",
-      180,
-      true,
-    ),
-  );
-
-  myLibrary.addBook(
-    new Book("The Great Gatsby", "F. Scott Fitzgerald", 184, false),
-  );
-  myLibrary.addBook(new Book("The Call Of The Wild", "Jack London", 288, true));
-  myLibrary.addBook(new Book("To Kill A Mockingbird", "Harper Lee", 309, true));
-
   addShowDialogEvent();
   addDialogFormEvents(myLibrary);
 }
