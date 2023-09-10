@@ -49,7 +49,7 @@ Book.prototype.generateBookHTMLElement = function () {
   const bookReadLabel = document.createElement("label");
   bookContainer.appendChild(bookReadLabel);
   bookReadLabel.classList.add("book-read-box-id");
-  bookReadLabel.textContent = "Finished";
+  bookReadLabel.textContent = "Mark as Read";
 
   const bookRead = document.createElement("input");
   bookContainer.appendChild(bookRead);
