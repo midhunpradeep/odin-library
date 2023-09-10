@@ -22,7 +22,6 @@ Library.prototype.addBook = function (book) {
   const bookReadBox = bookElement.querySelector(".book-read-box");
   bookReadBox.addEventListener("change", () => {
     book.hasBeenRead = bookReadBox.checked;
-    console.log(this);
   });
 };
 
