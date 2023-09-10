@@ -41,15 +41,10 @@ body {
 
 .library .book-container .book-read-container {
   margin-top: auto;
-  text-align: right;
-  font-weight: 300;
-}
-
-.library .book-container .book-read-container {
-  margin-top: auto;
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 0.5rem;
   pointer-events: none;
+  font-weight: 300;
 }
