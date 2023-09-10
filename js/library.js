@@ -1,6 +1,7 @@
 "use strict";
 
 let idCounter = 0;
+
 function getNewID() {
   let id = idCounter;
   idCounter += 1;
@@ -22,6 +23,11 @@ Library.prototype.addBook = function (book) {
   const bookReadBox = bookElement.querySelector(".book-read-box");
   bookReadBox.addEventListener("change", () => {
     book.hasBeenRead = bookReadBox.checked;
+    console.log(this);
+  });
+
+  bookElement.addEventListener("click", () => {
+    bookReadBox.click();
   });
 };
 
