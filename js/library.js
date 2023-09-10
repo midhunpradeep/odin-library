@@ -5,7 +5,7 @@ let idCounter = 0;
 function getNewID() {
   let id = idCounter;
   idCounter += 1;
-  return id;
+  return id.toString();
 }
 
 function Library(htmlID) {
@@ -19,12 +19,25 @@ Library.prototype.addBook = function (book) {
   const htmlLibrary = document.getElementById(this.htmlID);
   const bookElement = book.generateBookHTMLElement();
   htmlLibrary.appendChild(bookElement);
+  addBookHTMLElementEvents(bookElement, this);
+};
 
-  const bookReadBox = bookElement.querySelector(".book-read-box");
-  bookReadBox.addEventListener("change", () => {
-    book.hasBeenRead = bookReadBox.checked;
-    console.log(this);
-  });
+Library.prototype.removeBookAt = function (bookIndex) {
+  const book = this.books[bookIndex];
+  this.books.splice(bookIndex, 1);
+
+  const bookElement = document.querySelector(
+    `.book-container[data-book-id="${book.id}"]`,
+  );
+  bookElement.remove();
+  console.log(this);
+};
+
+Library.prototype.searchForBook = function (bookId) {
+  for (let i = 0; i < this.books.length; i++) {
+    if (this.books[i].id === bookId) return i;
+  }
+  return -1;
 };
 
 function Book(name, author, numPages, hasBeenRead) {
@@ -37,6 +50,7 @@ function Book(name, author, numPages, hasBeenRead) {
 
 Book.prototype.generateBookHTMLElement = function () {
   const bookContainer = document.createElement("div");
+  bookContainer.dataset.bookId = this.id;
   bookContainer.classList.add("book-container");
 
   const topRow = document.createElement("div");
@@ -84,6 +98,21 @@ Book.prototype.generateBookHTMLElement = function () {
 
   return bookContainer;
 };
+
+function addBookHTMLElementEvents(bookElement, library) {
+  let book = library.books[library.searchForBook(bookElement.dataset.bookId)];
+
+  const bookReadBox = bookElement.querySelector(".book-read-box");
+  bookReadBox.addEventListener("change", () => {
+    book.hasBeenRead = bookReadBox.checked;
+  });
+
+  const bookDeleteBtn = bookElement.querySelector(".book-delete-btn");
+  bookDeleteBtn.addEventListener("click", () => {
+    let bookIndex = library.searchForBook(bookElement.dataset.bookId);
+    library.removeBookAt(bookIndex);
+  });
+}
 
 function addShowDialogEvent() {
   const newBookBtn = document.getElementById("new-book-btn");
