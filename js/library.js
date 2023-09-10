@@ -92,8 +92,6 @@ function main() {
   );
   myLibrary.addBook(new Book("The Call Of The Wild", "Jack London", 288, true));
   myLibrary.addBook(new Book("To Kill A Mockingbird", "Harper Lee", 309, true));
-
-  console.log(myLibrary);
 }
 
 main();
