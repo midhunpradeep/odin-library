@@ -61,6 +61,10 @@ html {
   transform: scale(1.02);
 }
 
+.container .library .book-container:active {
+  transform: none;
+}
+
 .container .library .book-container .book-pages {
   font-weight: 300;
 }
