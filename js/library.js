@@ -46,13 +46,17 @@ Book.prototype.generateBookHTMLElement = function () {
   bookPages.classList.add("book-pages");
   bookPages.textContent = this.numPages + " Pages";
 
+  const bookReadContainer = document.createElement("div");
+  bookContainer.appendChild(bookReadContainer);
+  bookReadContainer.classList.add("book-read-container");
+
   const bookReadLabel = document.createElement("label");
-  bookContainer.appendChild(bookReadLabel);
+  bookReadContainer.appendChild(bookReadLabel);
   bookReadLabel.classList.add("book-read-box-id");
   bookReadLabel.textContent = "Mark as Read";
 
   const bookRead = document.createElement("input");
-  bookContainer.appendChild(bookRead);
+  bookReadContainer.appendChild(bookRead);
   bookRead.classList.add("book-read-box");
   bookRead.id = "book-" + this.id + "-read-box";
   bookRead.type = "checkbox";

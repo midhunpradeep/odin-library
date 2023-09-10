@@ -1,0 +1,54 @@
+:root {
+  --color-1: #f1f1f1;
+  --color-2: #ffffff;
+  --color-3: #29ceff;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--color-1);
+  padding: 1rem;
+}
+
+.library {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  gap: 1rem;
+}
+
+.library .book-container {
+  background-color: var(--color-2);
+  border-radius: 1rem;
+  border-left: 0.33rem solid var(--color-3);
+  border-bottom: 0.33rem solid var(--color-3);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.library .book-container:hover {
+  transform: scale(1.02);
+}
+
+.library .book-container .book-pages {
+  font-weight: 300;
+}
+
+.library .book-container .book-read-container {
+  margin-top: auto;
+  text-align: right;
+  font-weight: 300;
+}
+
+.library .book-container .book-read-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+}
