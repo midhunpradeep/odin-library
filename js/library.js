@@ -70,7 +70,7 @@ function main() {
   myLibrary.addBook(
     new Book(
       "The Hitchhiker’s Guide To The Galaxy",
-      "Dougals Adams",
+      "Douglas Adams",
       180,
       true,
     ),
