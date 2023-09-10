@@ -16,7 +16,14 @@ Library.prototype.addBook = function (book) {
   this.books.push(book);
 
   const htmlLibrary = document.getElementById(this.htmlID);
-  htmlLibrary.appendChild(book.generateBookHTMLElement());
+  const bookElement = book.generateBookHTMLElement();
+  htmlLibrary.appendChild(bookElement);
+
+  const bookReadBox = bookElement.querySelector(".book-read-box");
+  bookReadBox.addEventListener("change", () => {
+    book.hasBeenRead = bookReadBox.checked;
+    console.log(this);
+  });
 };
 
 function Book(name, author, numPages, hasBeenRead) {
